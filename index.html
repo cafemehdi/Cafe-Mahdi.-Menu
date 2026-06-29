@@ -6,75 +6,163 @@
 
 <title>کافه مهدی</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+
 <style>
+
+:root{
+--bg:#120d09;
+--card:#241711;
+--wood:#3b2518;
+--gold:#d4a762;
+--text:#f4e6d0;
+}
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:tahoma;
+font-family:'Vazirmatn',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-background:#1b120d;
-color:#f5e6cc;
+background:var(--bg);
+color:var(--text);
 }
 
-.header{
-background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200');
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.75)),
+url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600");
 background-size:cover;
 background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
 text-align:center;
-padding:100px 20px;
-}
-
-.header h1{
-font-size:45px;
-margin-bottom:15px;
-color:#f5e6cc;
-}
-
-.header p{
-font-size:18px;
-}
-
-.address{
-background:#4a2c1a;
 padding:20px;
-margin:20px;
-border-radius:15px;
+}
+
+.hero-content{
+max-width:700px;
+}
+
+.hero h1{
+font-size:4rem;
+margin-bottom:15px;
+color:white;
+}
+
+.hero p{
+font-size:1.2rem;
+line-height:1.9;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:14px 32px;
+background:var(--gold);
+color:black;
+text-decoration:none;
+border-radius:40px;
+font-weight:700;
+}
+
+nav{
+position:sticky;
+top:0;
+z-index:100;
+background:rgba(18,13,9,.95);
+backdrop-filter:blur(8px);
+display:flex;
+justify-content:center;
+gap:15px;
+padding:15px;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:.9rem;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:60px 20px;
+}
+
+.section-title{
 text-align:center;
+font-size:2rem;
+margin-bottom:40px;
+color:var(--gold);
 }
 
-.section{
-margin:20px;
-background:#2b1b12;
-border-radius:15px;
-padding:20px;
-box-shadow:0 0 10px rgba(0,0,0,.4);
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
 }
 
-.section h2{
-color:#c89b5a;
-margin-bottom:15px;
+.card{
+background:var(--card);
+border-radius:20px;
+padding:25px;
+border:1px solid rgba(255,255,255,.05);
+transition:.3s;
 }
 
-.item{
-padding:10px 0;
-border-bottom:1px solid rgba(255,255,255,.1);
+.card:hover{
+transform:translateY(-6px);
+}
+
+.card h3{
+margin-bottom:20px;
+color:var(--gold);
+font-size:1.4rem;
+}
+
+.menu-item{
 display:flex;
 justify-content:space-between;
+padding:12px 0;
+border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-.item:last-child{
+.menu-item:last-child{
 border:none;
 }
 
-.footer{
+.address{
+background:var(--wood);
+padding:40px;
+border-radius:20px;
 text-align:center;
-padding:30px;
-color:#c89b5a;
+font-size:1.1rem;
+line-height:2;
+}
+
+footer{
+padding:50px 20px;
+text-align:center;
+color:#b89b73;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.8rem;
+}
+
+.hero p{
+font-size:1rem;
+}
+
 }
 
 </style>
@@ -82,66 +170,88 @@ color:#c89b5a;
 
 <body>
 
-<div class="header">
+<section class="hero">
+<div class="hero-content">
 <h1>☕ کافه مهدی</h1>
-<p>لحظه‌های خوب، با طعم قهوه</p>
+<p>
+لحظه‌های خوب، با طعم قهوه
+</p>
+<a href="#menu" class="btn">مشاهده منو</a>
+</div>
+</section>
+
+<nav>
+<a href="#menu">منو</a>
+<a href="#location">آدرس</a>
+</nav>
+
+<section id="menu" class="container">
+
+<h2 class="section-title">منوی کافه</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>☕ قهوه</h3>
+
+<div class="menu-item"><span>اسپرسو تک</span><span>70,000</span></div>
+<div class="menu-item"><span>اسپرسو دوبل</span><span>80,000</span></div>
+<div class="menu-item"><span>آمریکانو</span><span>120,000</span></div>
+<div class="menu-item"><span>آیس آمریکانو</span><span>135,000</span></div>
+<div class="menu-item"><span>لاته</span><span>150 / 200</span></div>
+<div class="menu-item"><span>کاپوچینو</span><span>120 / 200</span></div>
+<div class="menu-item"><span>موکا</span><span>120 / 200</span></div>
+<div class="menu-item"><span>کارامل ماکیاتو</span><span>200</span></div>
+<div class="menu-item"><span>آفوگاتو</span><span>قیمت روز</span></div>
+<div class="menu-item"><span>قهوه ترک</span><span>قیمت روز</span></div>
+
 </div>
 
+<div class="card">
+<h3>🧊 نوشیدنی‌های سرد</h3>
+
+<div class="menu-item"><span>آیس لاته</span><span>—</span></div>
+<div class="menu-item"><span>آیس موکا</span><span>—</span></div>
+<div class="menu-item"><span>آیس کارامل ماکیاتو</span><span>—</span></div>
+<div class="menu-item"><span>موهیتو</span><span>—</span></div>
+<div class="menu-item"><span>لیموناد</span><span>—</span></div>
+
+</div>
+
+<div class="card">
+<h3>🔥 نوشیدنی‌های گرم</h3>
+
+<div class="menu-item"><span>هات چاکلت</span><span>—</span></div>
+<div class="menu-item"><span>نسکافه</span><span>—</span></div>
+<div class="menu-item"><span>قهوه دمی</span><span>—</span></div>
+<div class="menu-item"><span>کاپوچینو گرم</span><span>—</span></div>
+
+</div>
+
+<div class="card">
+<h3>🍵 چای و دمنوش</h3>
+
+<div class="menu-item"><span>چای سیاه</span><span>—</span></div>
+<div class="menu-item"><span>چای سبز</span><span>—</span></div>
+<div class="menu-item"><span>چای ماسالا</span><span>—</span></div>
+<div class="menu-item"><span>چای کرک</span><span>—</span></div>
+<div class="menu-item"><span>دمنوش گل گاوزبان</span><span>—</span></div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="location" class="container">
 <div class="address">
 📍 شهرضا، منظریه، خیابان قشقایی، نبش فرعی ۴
 </div>
+</section>
 
-<div class="section">
-<h2>☕ قهوه</h2>
-
-<div class="item"><span>اسپرسو تک</span><span>70,000</span></div>
-<div class="item"><span>اسپرسو دوبل</span><span>80,000</span></div>
-<div class="item"><span>آمریکانو</span><span>120,000</span></div>
-<div class="item"><span>آیس آمریکانو</span><span>135,000</span></div>
-<div class="item"><span>لاته</span><span>150,000 / 200,000</span></div>
-<div class="item"><span>کاپوچینو</span><span>120,000 / 200,000</span></div>
-<div class="item"><span>موکا</span><span>120,000 / 200,000</span></div>
-<div class="item"><span>کارامل ماکیاتو</span><span>200,000</span></div>
-<div class="item"><span>آفوگاتو</span><span>قیمت روز</span></div>
-<div class="item"><span>قهوه ترک</span><span>قیمت روز</span></div>
-
-</div>
-
-<div class="section">
-<h2>🧊 نوشیدنی‌های سرد</h2>
-
-<div class="item"><span>آیس لاته</span><span>—</span></div>
-<div class="item"><span>آیس موکا</span><span>—</span></div>
-<div class="item"><span>آیس کارامل ماکیاتو</span><span>—</span></div>
-<div class="item"><span>موهیتو</span><span>—</span></div>
-<div class="item"><span>لیموناد</span><span>—</span></div>
-
-</div>
-
-<div class="section">
-<h2>🔥 نوشیدنی‌های گرم</h2>
-
-<div class="item"><span>هات چاکلت</span><span>—</span></div>
-<div class="item"><span>نسکافه</span><span>—</span></div>
-<div class="item"><span>قهوه دمی</span><span>—</span></div>
-<div class="item"><span>کاپوچینو گرم</span><span>—</span></div>
-
-</div>
-
-<div class="section">
-<h2>🍵 چای و دمنوش</h2>
-
-<div class="item"><span>چای سیاه</span><span>—</span></div>
-<div class="item"><span>چای سبز</span><span>—</span></div>
-<div class="item"><span>چای ماسالا</span><span>—</span></div>
-<div class="item"><span>چای کرک</span><span>—</span></div>
-<div class="item"><span>دمنوش گل گاوزبان</span><span>—</span></div>
-
-</div>
-
-<div class="footer">
+<footer>
 کافه مهدی ☕
-</div>
+</footer>
 
 </body>
 </html>
